@@ -3,3 +3,17 @@
     justify-content: center;
     margin-top: 200px;
 }
+.alignCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.excelTable{
+    border: 1px solid #B0CBEF;
+	border-width: 1px 0px 0px 1px;
+	font-size: 11pt;
+	font-family: Calibri;
+	font-weight: 100;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}

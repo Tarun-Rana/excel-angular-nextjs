@@ -1,22 +1,47 @@
 <div class="container ">
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-body">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Excel to Json Converter</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><button class="btn btn-success">Upload Excel</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Excel to Json Converter</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="alignCenter">
+                  <input
+                    type="file"
+                    class="btn btn-success"
+                    (change)="upload($event)"
+                  />
+                </td>
+              </tr>
+              <div *ngIf="isExcelFile === false">
+                This is not an Excel file
+              </div>
+              <div class="container-fluid"> 
+                <table class="excelTable">
+                  <thead>
+                    <th *ngFor="let key of keys">
+                      {{key}}
+                    </th>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of dataSheet | async">
+                      <td *ngFor="let key of keys">
+                        {{item[key]}}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </tbody>
+          </table>
         </div>
+      </div>
     </div>
+  </div>
 </div>
